@@ -4,6 +4,7 @@ from alembic import context
 from sqlalchemy import engine_from_config, pool
 from sqlmodel import SQLModel
 
+from example_fastapi_sqlmodel_alembic.posts.model import Post
 from example_fastapi_sqlmodel_alembic.users.model import User
 
 # this is the Alembic Config object, which provides

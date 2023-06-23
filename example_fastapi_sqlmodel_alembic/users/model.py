@@ -1,6 +1,9 @@
-from typing import Optional
+from typing import TYPE_CHECKING, List, Optional
 
-from sqlmodel import Field, SQLModel
+if TYPE_CHECKING:
+    from example_fastapi_sqlmodel_alembic.posts.model import Post
+
+from sqlmodel import Field, Relationship, SQLModel
 
 
 class UserBase(SQLModel):
@@ -18,3 +21,5 @@ class UserRead(UserBase):
 
 class User(UserBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
+
+    posts: List["Post"] = Relationship(back_populates="user")

@@ -26,3 +26,6 @@ isort = "^5.12.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.flake8]
+exclude = "example_fastapi_sqlmodel_alembic/migrations"
